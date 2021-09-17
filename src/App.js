@@ -1,25 +1,33 @@
 import './App.css';
 import {useState, useEffect} from 'react';
+import CardHolder from './components/CardHolder';
+import formatDate from './util/formatDate';
 import axios from 'axios';
+
+let date = new Date()
+
+const today = formatDate()
+date.setDate(1)
+const currentMonth = formatDate(date)
 
 function App() {
   const [state, setState] = useState(null)
+
   const key = process.env.REACT_APP_API_KEY
-  const date = new Date()
-  const year = date.getFullYear()
-  const month = (date.getMonth() + 1).toPrecision(2)
-  const day = date.getDay() +1
-  console.log(`Today's date: ${year}/${month}/${day}`)
+  console.log(today)
+  console.log(currentMonth)
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod`, {
       params: {
-        count: 10,
+        start_date: currentMonth,
+        end_date: today,
         api_key: key
       }
     })
       .then(res => {
         console.log(res)
+        setState(res.data)
       })
       .catch(err => {
         console.log(err)
@@ -29,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
+      <CardHolder data={state} />
     </div>
   );
 }
