@@ -9,9 +9,9 @@ export default function ImageCard(props){
             <p>{imageData.date}</p>
             {(imageData.media_type === "image") ? <img src={imageData.hdurl} alt={imageData.explanation} /> :
             <iframe src={imageData.url} title="video title">
-
             </iframe>
         }
+            <button>Like Button</button>
         </section>
     )
 }
