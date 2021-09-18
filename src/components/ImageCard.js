@@ -2,10 +2,17 @@
 // from the API
 
 import {useState} from 'react';
+import saveToStorage from '../util/saveToStorage';
 
 export default function ImageCard(props){
     const {imageData, isLiked} = props;
     const [state, setState] = useState(isLiked);
+
+    const handleClick = e => {
+        e.preventDefault();
+        saveToStorage(imageData.date, !state)
+        setState(!state)
+    }
 
 
     return(
@@ -16,7 +23,7 @@ export default function ImageCard(props){
             <iframe src={imageData.url} title="video title">
             </iframe>
         }
-            <button disabled={state}>Like Button</button>
+            <button onClick={handleClick}>{(!state) ? "Like" : "Dislike"}</button>
         </section>
     )
 }

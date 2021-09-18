@@ -5,20 +5,19 @@ import formatDate from './util/formatDate';
 import axios from 'axios';
 
 let date = new Date()
-let testData = {test: 42069}
 
 const today = formatDate()
 date.setDate(1)
 const currentMonth = formatDate(date)
+const initializeLocalData = localStorage.getItem("data")
+if (initializeLocalData === null){
+  localStorage.setItem("data", JSON.stringify({"data-initialized": true}))
+}
 
 function App() {
   const [state, setState] = useState(null)
 
   const key = process.env.REACT_APP_API_KEY
-  console.log(today)
-  console.log(currentMonth)
-  console.log(testData.test)
-  console.log((testData["test"]) ? "true" : "false")
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod`, {

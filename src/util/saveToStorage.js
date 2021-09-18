@@ -4,6 +4,7 @@
 
 export default function saveToStorage(date, bool){
     let data = JSON.parse(localStorage.getItem("data"))
+    console.log(data)
     data[date] = bool
     localStorage.setItem("data", JSON.stringify(data))
     return;
