@@ -1,8 +1,13 @@
 // The standard card for rendering data
 // from the API
 
+import {useState} from 'react';
+
 export default function ImageCard(props){
-    const {imageData} = props;
+    const {imageData, isLiked} = props;
+    const [state, setState] = useState(isLiked);
+
+
     return(
         <section className="imageCard">
             <h1>{imageData.title}</h1>
@@ -11,7 +16,7 @@ export default function ImageCard(props){
             <iframe src={imageData.url} title="video title">
             </iframe>
         }
-            <button>Like Button</button>
+            <button disabled={state}>Like Button</button>
         </section>
     )
 }
