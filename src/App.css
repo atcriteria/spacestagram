@@ -1,5 +1,14 @@
+body {
+  background-color: rgb(25, 0, 95);
+  color: aquamarine;
+}
 .App {
   text-align: center;
+}
+
+.app-header {
+  font-size: 7vw;
+  margin: 1% 0;
 }
 
 .cardHolder {
@@ -18,9 +27,11 @@
   justify-content: space-between;
   align-items: center;
   width: 20%;
-  height: 380px;
+  height: 480px;
   margin-bottom: 2.5%;
-  border: 1px solid black;
+  border: 10px solid black;
+  border-radius: 28px;
+  padding: .75% 0;
 }
 
 .imageCard h1,p {
@@ -33,5 +44,80 @@
 }
 
 .liked {
-  border: 1px solid palevioletred;
+  border: 10px solid palevioletred;
+  background-color: lightpink;
+}
+
+button {
+  font-size: 1.8rem;
+  margin: 20px 0;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  cursor: pointer;
+}
+
+a:link {
+  color: rgb(254, 255, 179);
+  font-weight: 500;
+  font-style: italic;
+}
+a:visited {
+  color: rgb(91, 143, 255);
+}
+
+/* 
+
+  Loading Item
+
+*/
+
+.loader {
+  margin: 5%;
+  font-size: .65vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  height: 20vh;
+}
+.loader-sphere {
+  border: 6px solid rgba(255,255,255,0);
+  border-top: 6px solid aquamarine;
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+  animation: spin .65s linear infinite;
+  z-index: -1;
+  position: absolute;
+}
+.loader-sphere-thinner {
+  border: 3px solid rgba(255,255,255,0);
+  border-top: 3px solid aquamarine;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: spin .45s linear infinite;
+  z-index: -1;
+  position: absolute;
+  rotate: 180deg;
+}
+.loader-sphere-even-thinner {
+  border: 1px solid rgba(255,255,255,0);
+  border-top: 1px solid aquamarine;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  animation: spin .35s linear infinite;
+  z-index: -1;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
