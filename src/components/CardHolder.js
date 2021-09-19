@@ -10,14 +10,13 @@ export default function CardHolder(props){
 
     return(
         <section className="cardHolder">
-            <Loader />
-            {/* {
+            {
                 (!data)  ? <Loader /> :
                 data.map((imageData) => {
                     let isLiked = (localData && localData[imageData.date]) ? true : false;
                     return <ImageCard imageData={imageData} key={imageData.date} isLiked={isLiked} />
                 })
-            } */}
+            }
         </section>
     )
 }
