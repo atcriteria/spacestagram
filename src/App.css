@@ -5,6 +5,7 @@ body {
 }
 .App {
   text-align: center;
+  margin: auto;
 }
 
 .app-header {
@@ -16,7 +17,7 @@ body {
   width: 90%;
   margin: 2.5% auto;
   display: flex;
-  flex-direction: row ;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
@@ -39,6 +40,8 @@ body {
   padding: 0;
 }
 
+
+
 .imageCard h1,p {
   margin: 2.5px;
 }
@@ -52,6 +55,25 @@ body {
 .liked {
   border: 6px solid rgb(255, 220, 22);
   background-color: lightpink;
+}
+
+@media only screen and (max-width: 500px){
+  .cardHolder {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .imageCard {
+    width: 90%;
+    margin: auto;
+    box-shadow: none;
+    background: blue;
+    color: white;
+  }
+  .imageCard img, iframe {
+    width: 90%;
+  }
 }
 
 button {
