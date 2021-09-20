@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(25, 0, 95);
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 11%, rgba(2,0,36,1) 34%, rgba(9,9,121,1) 66%, rgba(0,212,255,1) 100%); 
   color: aquamarine;
 }
 .App {
@@ -22,6 +23,10 @@ body {
 }
 
 .imageCard {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(2,0,36,1) 20%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+  box-shadow: 0px 6px 20px rgb(0, 6, 37);
+  color: rgba(9,9,121,1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,9 +34,9 @@ body {
   width: 20%;
   height: 480px;
   margin-bottom: 2.5%;
-  border: 10px solid black;
+  border: 6px solid black;
   border-radius: 28px;
-  padding: .75% 0;
+  padding: 0;
 }
 
 .imageCard h1,p {
@@ -44,7 +49,7 @@ body {
 }
 
 .liked {
-  border: 10px solid palevioletred;
+  border: 6px solid rgb(255, 220, 22);
   background-color: lightpink;
 }
 
