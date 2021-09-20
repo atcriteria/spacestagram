@@ -9,7 +9,7 @@ export default function CardHolder(props){
     console.log(localData)
 
     return(
-        <section className="cardHolder">
+        <main className="cardHolder">
             {
                 (!data)  ? <Loader /> :
                 data.map((imageData) => {
@@ -17,6 +17,6 @@ export default function CardHolder(props){
                     return <ImageCard imageData={imageData} key={imageData.date} isLiked={isLiked} />
                 })
             }
-        </section>
+        </main>
     )
 }
