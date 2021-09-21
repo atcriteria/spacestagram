@@ -2,7 +2,7 @@
 
 export default function Loader(){
     return(
-        <div className="loader">
+        <div className="loader" alt="The page is fetching data from the API">
             <h1 className="loader-p">
                 Receiving Transmissions
             </h1>

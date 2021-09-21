@@ -6,10 +6,9 @@ import Loader from './Loader';
 export default function CardHolder(props){
     const {data} = props;
     const localData = JSON.parse(localStorage.getItem("data"))
-    console.log(localData)
 
     return(
-        <main className="cardHolder">
+        <section className="cardHolder">
             {
                 (!data)  ? <Loader /> :
                 data.map((imageData) => {
@@ -17,6 +16,6 @@ export default function CardHolder(props){
                     return <ImageCard imageData={imageData} key={imageData.date} isLiked={isLiked} />
                 })
             }
-        </main>
+        </section>
     )
 }

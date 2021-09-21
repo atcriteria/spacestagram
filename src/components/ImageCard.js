@@ -16,14 +16,14 @@ export default function ImageCard(props){
 
 
     return(
-        <section className={`imageCard ${(state) ? "liked" : ""}`}>
+        <article className={`imageCard ${(state) ? "liked" : ""}`}>
             {(imageData.media_type === "image") ? <img src={imageData.hdurl} alt={imageData.explanation} title={imageData.explanation} /> :
             <iframe src={imageData.url} title={imageData.title}>
             </iframe>
-        }
+            }
             <h1>{imageData.title}</h1>
-            <p>{imageData.date}</p>
+            <p>( {imageData.date} )</p>
             <button onClick={handleClick}>{(!state) ? "🚀" : "❤️"}</button>
-        </section>
+        </article>
     )
 }

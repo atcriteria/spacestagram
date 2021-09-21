@@ -1,11 +1,39 @@
 body {
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 11%, rgba(2,0,36,1) 34%, rgba(9,9,121,1) 66%, rgba(0,212,255,1) 100%); 
   color: aquamarine;
+  background: rgb(140, 103, 161);
+  font-family: 'Roboto', sans-serif;
 }
 .App {
+  width: 100%;
+  min-height: 100vh;
   text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+header {
+  margin: 3% auto;
+}
+header h1 {
+  font-family: 'Architects Daughter', cursive;
+}
+header p {
+  width: 70%;
+  margin: auto;
+}
+footer {
+  margin-top: 2.5%;
+  min-height: 100px;
+  padding: 3% 0;
+  background-color: rgb(69, 36, 107);
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .app-header {
@@ -14,66 +42,49 @@ body {
 }
 
 .cardHolder {
-  width: 90%;
+  width: 60%;
+  padding: 2.5% 5%;
   margin: 2.5% auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .imageCard {
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(2,0,36,1) 20%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
-  box-shadow: 0px 6px 20px rgb(0, 6, 37);
+  box-shadow: 0px 0px 14px rgb(0,0,0);
+  margin: 5% 0;
   color: rgba(9,9,121,1);
+  background: rgb(204, 175, 221);
+  background: rgba(204, 175, 221, 20);
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
+  justify-content: space-around;
   align-items: center;
-  width: 20%;
-  height: 480px;
+  flex-wrap: wrap;
+  text-align: justify;
+  width: 100%;
   margin-bottom: 2.5%;
-  border: 6px solid black;
   border-radius: 28px;
-  padding: 0;
+  padding: 0 1%;
 }
 
-
-
-.imageCard h1,p {
-  margin: 2.5px;
+.imageCard h1 {
+  margin: 1.5% auto;
+  text-align: center;
 }
 
 .imageCard img, iframe{
-  margin-top: 8%;
-  width: 300px;
-  height: 300px;
+  border-radius: 16px;
+  margin-top: 6%;
+  width: 98%;
+  min-height: 300px;
 }
 
 .liked {
-  border: 6px solid rgb(255, 220, 22);
-  background-color: lightpink;
-}
-
-@media only screen and (max-width: 500px){
-  .cardHolder {
-    width: 100%;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .imageCard {
-    width: 90%;
-    margin: 2.5% auto;
-    box-shadow: none;
-    background: blue;
-    color: white;
-  }
-  .imageCard img, iframe {
-    width: 90%;
-  }
+  background-color: rgb(255, 167, 215);
+  transition: 1s;
 }
 
 button {
@@ -100,14 +111,13 @@ a:visited {
 */
 
 .loader {
-  margin: 5%;
+  margin: 2.5%;
   font-size: .65vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 25%;
-  height: 20vh;
 }
 .loader-sphere {
   border: 6px solid rgba(255,255,255,0);
@@ -147,5 +157,31 @@ a:visited {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .app-header {
+    font-size: 10vw;
+    margin: 3% auto;
+  }
+  .loader {
+    font-size: 16px;
+  }
+  header p {
+    font-size: 16px;
+  }
+  .cardHolder {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+  .imageCard {
+    width: 95%;
+    max-width: 370px;
+    margin: 7% auto;
+    box-shadow: none;
   }
 }
