@@ -1,2 +1,7 @@
-# spacestagram
-An Instagram-esque clone for NASA images.
+# Spacestagram
+
+An application that uses NASA's free API, [Astronomy Picture of the Day (APOD)](https://api.nasa.gov/#browseAPI), to fetch and render 30~ images at a time for users to browse and "like" by clicking the rocket emoji with the associated image card. Currently the application renders static data for the sake of showcasing it's functionality.
+
+The application saves your "liked" images to LocalStorage with a [saveToStorage](https://github.com/atcriteria/spacestagram/blob/main/src/util/saveToStorage.js) utility function. The function is rather simple in that it takes the string of a date (usually this would be an ID but each date is unique in this API) and a boolean, retrieves the current LocalStorage data object, and applies the changes to the object before saving the changes to LocalStorage. By setting the key name to the date, we can specifically update unique key/value pairs in an O(1) operation.
+
+In the future, the application can be expanded to allow users to select specific dates and fetch the associated image/video from the NASA API, as well as entering a specific date range or simply requesting to load "more" images. Most of the functionality has been written for these features in a simple utility function, [formatDate.js](https://github.com/atcriteria/spacestagram/blob/main/src/util/formatDate.js). This function takes a ```Date()``` object with the specified date and returns a string version in the proper format to be used with the GET request.
