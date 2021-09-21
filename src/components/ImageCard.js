@@ -21,8 +21,8 @@ export default function ImageCard(props){
             <iframe src={imageData.url} title={imageData.title}>
             </iframe>
             }
-            <h1>{imageData.title}</h1>
-            <p>( {imageData.date} )</p>
+            <h1>{imageData.title}  ({imageData.date})</h1>
+            <p>{imageData.explanation}</p>
             <button onClick={handleClick}>{(!state) ? "🚀" : "❤️"}</button>
         </article>
     )

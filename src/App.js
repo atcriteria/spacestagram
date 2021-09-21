@@ -41,7 +41,7 @@ function App() {
         alert("There was a problem in retrieving data from the API\n\nPlease try refreshing the page")
         console.log(err)
       })
-  }, [])
+  }, [key])
 
   return (
     <main className="App">
